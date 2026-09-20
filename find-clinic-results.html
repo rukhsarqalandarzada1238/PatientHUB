@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Clinic Results - MyPatientHUB</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="find-pages.css">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo-area">
+            <div class="logo-icon">M</div>
+            <span>MyPatientHUB</span>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html" class="menu-item">
+                <span class="menu-icon">▣</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▤</span>
+                <span>Appointments</span>
+            </a>
+
+            <a href="find-doctor.html" class="menu-item">
+                <span class="menu-icon">♟</span>
+                <span>Find Doctor</span>
+            </a>
+
+            <a href="find-clinic.html" class="menu-item active">
+                <span class="menu-icon">▦</span>
+                <span>Find Clinic</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▣</span>
+                <span>Chat</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▤</span>
+                <span>Find Market-Place</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▦</span>
+                <span>Find Pharmacy</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▤</span>
+                <span>My Dependents</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">⚒</span>
+                <span>My Account</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="help-box">
+            <span>?</span>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <section class="dashboard-content">
+            <section class="clinic-hero">
+
+                <!-- TOP BAR -->
+                <div class="hero-topbar">
+
+                    <div class="hero-left">
+
+                        <button
+                            type="button"
+                            class="hero-hamburger"
+                            onclick="toggleClinicSidebar()">
+                            ☰
+                        </button>
+
+                        <div class="hero-breadcrumb">
+
+                            <div>
+                                ⌂
+                                <span>/</span>
+                                Findclinic
+                                <span>/</span>
+                                Results
+                            </div>
+
+                            <strong>Find Clinics</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-right">
+
+                        <div class="hero-search">
+
+                            <span>⌕</span>
+
+                            <input
+                                type="text"
+                                placeholder="Type here...">
+
+                        </div>
+
+                        <a
+                            href="index.html"
+                            class="hero-logout">
+                            ◉ Log out
+                        </a>
+
+                        <span class="hero-icon">⚙</span>
+
+                        <span class="hero-icon">♟</span>
+
+                    </div>
+
+                </div>
+                <div class="hero-title">
+
+                    <h1>Find a Clinic</h1>
+
+                    <p>
+                        Find clinics and healthcare services near you
+                    </p>
+                    <div class="search-row">
+
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="resultClinicSearch"
+                            placeholder="Search clinic by name or service">
+
+
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="resultZipCode"
+                            placeholder="City, Zip Code or Neighborhood">
+
+
+                        <button
+                            type="button"
+                            class="search-button current-button"
+                            onclick="openClinicResults('current')">
+                            CURRENT
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="search-button"
+                            onclick="searchClinics()">
+                            SEARCH
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <section class="clinic-results-page">
+                <div class="clinic-results-header">
+
+                    <div>
+
+                        <h1>Find Clinics</h1>
+
+                        <p>
+                            Find clinics and healthcare services near you
+                        </p>
+
+                    </div>
+
+                </div>
+                <div class="clinic-results-search">
+
+                    <div class="results-search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="text"
+                            id="resultClinicSearchBottom"
+                            placeholder="Primary Care">
+
+                    </div>
+
+
+                    <div class="results-search-box">
+
+                        <span>📍</span>
+
+                        <input
+                            type="text"
+                            id="resultZipCodeBottom"
+                            placeholder="ZIP Code">
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="results-search-btn"
+                        onclick="searchClinics()">
+                        SEARCH
+                    </button>
+
+                </div>
+                <div class="clinic-map-layout">
+                    <aside class="clinic-filter-panel">
+
+                        <div class="filter-header">
+
+                            <h2>Filters</h2>
+
+                            <button
+                                type="button"
+                                id="clearFilters">
+                                Clear
+                            </button>
+
+                        </div>
+                        <div class="filter-section">
+
+                            <label class="filter-label">
+                                Primary Care
+                            </label>
+
+                            <select id="primaryCare">
+
+                                <option value="">
+                                    Select Primary Care
+                                </option>
+
+                                <option>
+                                    Family Medicine
+                                </option>
+
+                                <option>
+                                    Internal Medicine
+                                </option>
+
+                                <option>
+                                    General Practice
+                                </option>
+
+                                <option>
+                                    Pediatrics
+                                </option>
+
+                            </select>
+
+                        </div>
+                        <div class="filter-section">
+
+                            <label class="filter-label">
+                                ZIP Code
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="Enter ZIP Code"
+                                id="filterZip">
+
+                        </div>
+                        <div class="filter-section">
+
+                            <h3>Filter By</h3>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Specialty</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Gender</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Condition</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Languages</span>
+                            </label>
+
+                        </div>
+
+                        <div class="filter-section">
+
+                            <h3>All Ages</h3>
+
+                            <label class="checkbox-row">
+                                <input
+                                    type="checkbox"
+                                    name="age">
+                                <span>All Ages</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input
+                                    type="checkbox"
+                                    name="age">
+                                <span>Children</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input
+                                    type="checkbox"
+                                    name="age">
+                                <span>Adults</span>
+                            </label>
+
+                        </div>
+                        <div class="filter-section">
+
+                            <h3>View Only</h3>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Online Scheduling</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Primary Care</span>
+                            </label>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="apply-filter-btn"
+                            onclick="applyClinicFilters()">
+                            APPLY FILTER
+                        </button>
+
+                    </aside>
+                    <section class="clinic-map-container">
+
+                        <div class="map-topbar">
+
+                            <div>
+
+                                <strong>
+                                    Clinics Near You
+                                </strong>
+
+                                <span id="clinicCount">
+                                    12 clinics found
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="map-location-btn"
+                                onclick="showClinicLocation()">
+                                📍 My Location
+                            </button>
+
+                        </div>
+
+
+                        <div class="map-area">
+
+                            <div class="map-road road-one"></div>
+                            <div class="map-road road-two"></div>
+                            <div class="map-road road-three"></div>
+                            <div class="map-road road-four"></div>
+
+                            <button
+                                class="map-marker marker-one"
+                                title="City Care Medical Clinic">
+                                🏥
+                            </button>
+
+
+                            <button
+                                class="map-marker marker-two"
+                                title="Family Wellness Clinic">
+                                🏥
+                            </button>
+
+
+                            <button
+                                class="map-marker marker-three"
+                                title="Prime Diagnostic Center">
+                                🏥
+                            </button>
+
+
+                            <button
+                                class="map-marker marker-four"
+                                title="CarePlus Specialist Clinic">
+                                🏥
+                            </button>
+
+
+                            <div
+                                class="current-location"
+                                id="clinicCurrentLocation">
+                                <span></span>
+                            </div>
+
+
+                            <div class="map-controls">
+
+                                <button type="button">
+                                    +
+                                </button>
+
+                                <button type="button">
+                                    −
+                                </button>
+
+                            </div>
+
+                            <div class="map-label label-one">
+                                Central District
+                            </div>
+
+                            <div class="map-label label-two">
+                                Medical Center
+                            </div>
+
+                            <div class="map-label label-three">
+                                Riverside
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+                <section class="clinic-list-section">
+
+                    <h2>Available Clinics</h2>
+
+                    <div class="clinic-list">
+
+
+                        <div class="clinic-card">
+
+                            <div class="clinic-card-icon">
+                                🏥
+                            </div>
+
+                            <div class="clinic-card-info">
+
+                                <h3>
+                                    City Care Medical Clinic
+                                </h3>
+
+                                <p>
+                                    Primary Care • Family Medicine
+                                </p>
+
+                                <span>
+                                    📍 Central District
+                                </span>
+
+                            </div>
+
+                            <button>
+                                VIEW DETAILS
+                            </button>
+
+                        </div>
+
+
+                        <div class="clinic-card">
+
+                            <div class="clinic-card-icon">
+                                🏥
+                            </div>
+
+                            <div class="clinic-card-info">
+
+                                <h3>
+                                    Family Wellness Clinic
+                                </h3>
+
+                                <p>
+                                    Family & Women's Health
+                                </p>
+
+                                <span>
+                                    📍 Riverside
+                                </span>
+
+                            </div>
+
+                            <button>
+                                VIEW DETAILS
+                            </button>
+
+                        </div>
+
+
+                        <div class="clinic-card">
+
+                            <div class="clinic-card-icon">
+                                🏥
+                            </div>
+
+                            <div class="clinic-card-info">
+
+                                <h3>
+                                    Prime Diagnostic Center
+                                </h3>
+
+                                <p>
+                                    Laboratory & Diagnostic Services
+                                </p>
+
+                                <span>
+                                    📍 Medical Center
+                                </span>
+
+                            </div>
+
+                            <button>
+                                VIEW DETAILS
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    ©️ 2026, made with ♥️ by MyPatientHUB
+                    for a better web.
+                </p>
+
+                <div>
+
+                    <a href="#">MyPatientHUB</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+
+                </div>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+
+    <script>
+
+        function toggleClinicSidebar() {
+
+            const sidebar =
+                document.getElementById("sidebar");
+
+            if (!sidebar) {
+                return;
+            }
+
+            sidebar.classList.toggle("show");
+
+        }
+
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        function searchClinics() {
+
+            const heroSearch =
+                document.getElementById(
+                    "resultClinicSearch"
+                );
+
+            const heroLocation =
+                document.getElementById(
+                    "resultZipCode"
+                );
+
+
+            const bottomSearch =
+                document.getElementById(
+                    "resultClinicSearchBottom"
+                );
+
+            const bottomLocation =
+                document.getElementById(
+                    "resultZipCodeBottom"
+                );
+
+
+            const search =
+                heroSearch.value.trim() !== ""
+                    ? heroSearch.value.trim()
+                    : bottomSearch.value.trim();
+
+
+            const location =
+                heroLocation.value.trim() !== ""
+                    ? heroLocation.value.trim()
+                    : bottomLocation.value.trim();
+
+
+            console.log(
+                "Clinic Search:",
+                search,
+                "Location:",
+                location
+            );
+
+        }
+
+        function openClinicResults(mode) {
+
+            if (mode === "current") {
+
+                const location =
+                    document.getElementById(
+                        "clinicCurrentLocation"
+                    );
+
+                if (location) {
+
+                    location.classList.add(
+                        "location-active"
+                    );
+
+                }
+
+            }
+
+        }
+
+
+
+        function showClinicLocation() {
+
+            const location =
+                document.getElementById(
+                    "clinicCurrentLocation"
+                );
+
+            if (location) {
+
+                location.classList.add(
+                    "location-active"
+                );
+
+            }
+
+        }
+
+        function applyClinicFilters() {
+
+            const primaryCare =
+                document.getElementById(
+                    "primaryCare"
+                ).value;
+
+            const zip =
+                document.getElementById(
+                    "filterZip"
+                ).value.trim();
+
+
+            console.log(
+                "Primary Care:",
+                primaryCare,
+                "ZIP:",
+                zip
+            );
+
+        }
+        const clearFilters =
+            document.getElementById(
+                "clearFilters"
+            );
+
+
+        clearFilters.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelectorAll(
+                        ".clinic-filter-panel input"
+                    )
+                    .forEach(function (input) {
+
+                        input.checked = false;
+                        input.value = "";
+
+                    });
+
+
+                document.getElementById(
+                    "primaryCare"
+                ).value = "";
+
+
+                document.getElementById(
+                    "filterZip"
+                ).value = "";
+
+            }
+        );
+
+        const ageCheckboxes =
+            document.querySelectorAll(
+                'input[name="age"]'
+            );
+
+
+        ageCheckboxes.forEach(
+            function (checkbox) {
+
+                checkbox.addEventListener(
+                    "change",
+                    function () {
+
+                        if (this.checked) {
+
+                            ageCheckboxes.forEach(
+                                function (other) {
+
+                                    if (
+                                        other !== checkbox
+                                    ) {
+                                        other.checked = false;
+                                    }
+
+                                }
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

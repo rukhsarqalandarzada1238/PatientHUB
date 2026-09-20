@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyPatientHUB Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="dashboard-body">
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo-area">
+
+            <div class="logo-icon">
+                M
+            </div>
+
+            <span>MyPatientHUB</span>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="#" class="menu-item active">
+
+                <span class="menu-icon">▣</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">▤</span>
+
+                <span>Appointments</span>
+
+            </a>
+            <a href="find-doctor.html" class="menu-item">
+
+                <span class="menu-icon">♟</span>
+
+                <span>Find Doctor</span>
+
+            </a>
+            <a href="find-clinic.html" class="menu-item">
+
+                <span class="menu-icon">▦</span>
+
+                <span>Find Clinic</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">▣</span>
+
+                <span>Chat</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">▤</span>
+
+                <span>Find Market-Place</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">▦</span>
+
+                <span>Find Pharmacy</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">▤</span>
+
+                <span>My Dependents</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">⚒</span>
+
+                <span>My Account</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="help-box">
+
+            <span>?</span>
+
+        </div>
+
+    </aside>
+    <main class="main-content">
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button class="hamburger" onclick="toggleSidebar()">
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <div class="breadcrumb">
+
+                        <span>⌂</span>
+
+                        <span>/</span>
+
+                        <span>Dashboard</span>
+
+                    </div>
+
+                    <h2>Dashboard</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input type="text" placeholder="Type here...">
+
+                </div>
+
+
+          <a href="#" class="header-link">◉ Log out</a>
+
+
+                <span class="header-icon">⚙</span>
+
+                <span class="header-icon">♟</span>
+
+            </div>
+
+        </header>
+        <section class="dashboard-content">
+
+
+            <h1>Welcome To MyPatientHUB!</h1>
+
+
+            <div class="cards-grid">
+                <div class="dashboard-card">
+
+                    <div class="card-title">
+
+                        <h3>Promotion by Clinics</h3>
+
+                        <span>ⓘ</span>
+
+                    </div>
+
+
+                    <div class="chart-content">
+
+                        <div class="donut chart-clinic"></div>
+
+
+                        <div class="legend">
+
+                            <div>
+                                <i class="pink"></i>
+                                Klinik Lee Healthcare
+                                <b>19%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="blue"></i>
+                                Klinik Bandar Baru Nilai
+                                <b>4%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="yellow"></i>
+                                Klinik Mediviron Giant Nilai
+                                <b>10%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="green"></i>
+                                KLINIK NILAI IMPIAN
+                                <b>21%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="darkblue"></i>
+                                Klinik Mediviron
+                                <b>2%</b>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="details-btn">
+                        MORE DETAILS
+                    </button>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-title">
+
+                        <h3>Promotion by Pharmacies</h3>
+
+                        <span>ⓘ</span>
+
+                    </div>
+
+
+                    <div class="chart-content">
+
+                        <div class="donut chart-pharmacy"></div>
+
+
+                        <div class="legend">
+
+                            <div>
+                                <i class="blue"></i>
+                                ALPRO PHARMACY NILAI
+                                <b>15%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="lightblue"></i>
+                                ALPRO PHARMACY PEKAN NILAI
+                                <b>12%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="pink"></i>
+                                OK PHARMACY
+                                <b>5%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="green"></i>
+                                PHARMART PHARMACY NILAI
+                                <b>9%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="darkblue"></i>
+                                Health Lane Family Pharmacy
+                                <b>14%</b>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="details-btn">
+                        MORE DETAILS
+                    </button>
+
+                </div>
+                <div class="dashboard-card">
+
+                    <div class="card-title">
+
+                        <h3>Smart Market Usage by app</h3>
+
+                        <span>ⓘ</span>
+
+                    </div>
+
+
+                    <div class="chart-content">
+
+                        <div class="donut chart-market"></div>
+
+
+                        <div class="legend">
+
+                            <div>
+                                <i class="pink"></i>
+                                Food Panda
+                                <b>25%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="blue"></i>
+                                Grab Food
+                                <b>15%</b>
+                            </div>
+
+
+                            <div>
+                                <i class="green"></i>
+                                Other
+                                <b>10%</b>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="dashboard-card">
+
+                    <div class="card-title">
+
+                        <h3>Health index</h3>
+
+                        <span>ⓘ</span>
+
+                    </div>
+
+
+                    <div class="line-chart">
+
+                        <svg viewBox="0 0 600 180" preserveAspectRatio="none">
+
+                            <polyline points="
+                                0,145
+                                50,135
+                                100,142
+                                150,125
+                                200,130
+                                250,105
+                                300,120
+                                350,75
+                                400,95
+                                450,60
+                                500,80
+                                550,50
+                                600,35
+                                " fill="none" stroke="currentColor" stroke-width="3" />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="appointment-card">
+
+                <div class="appointment-header">
+
+                    <h3>Upcoming Appointments</h3>
+
+                    <button>
+                        VIEW ALL
+                    </button>
+
+                </div>
+
+
+                <div class="appointment-row">
+
+                    <div class="doctor">
+
+                        <div class="doctor-avatar">
+                            DR
+                        </div>
+
+
+                        <div>
+
+                            <strong>Dr Allan</strong>
+
+                            <span>Cardiologist</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-info">
+
+                        <strong>RM 400</strong>
+
+                        <span>40%</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <footer class="dashboard-footer">
+
+            <p>
+                © 2026, made with ♥ by MyPiHUB for a better web.
+            </p>
+
+
+            <div>
+
+                <a href="#">
+                    MyPatientHUB
+                </a>
+
+                <a href="#">
+                    About Us
+                </a>
+
+                <a href="#">
+                    Blog
+                </a>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

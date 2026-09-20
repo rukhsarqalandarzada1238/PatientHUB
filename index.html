@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyPatientHUB - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <section class="login-hero">
+
+        <div class="hero-content">
+
+            <h1>Welcome to MyPatientHUB!</h1>
+
+            <p>
+                We provide smart healthcare services in your hands.
+            </p>
+
+            <div class="login-card">
+
+                <h2>Sign in to MyPatientHUB</h2>
+
+                <div class="social-login">
+
+                    <button class="social-btn facebook">
+                        <span>f</span>
+                    </button>
+
+                    <button class="social-btn google">
+                        <span>G</span>
+                    </button>
+
+                </div>
+                <form id="loginForm">
+
+                    <input
+                        type="text"
+                        id="email"
+                        placeholder="Email or Phone number"
+                    >
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Please enter your password"
+                    >
+
+                    <button type="submit" class="signin-btn">
+                        SIGN IN
+                    </button>
+
+                </form>
+                <div class="login-options">
+
+                    <a href="#">Forgot password?</a>
+
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                </div>
+
+                <div class="or">
+                    <span>or</span>
+                </div>
+
+                <button
+                    class="signup-btn"
+                    onclick="goToDashboard()"
+                >
+                    SIGN UP
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="login-footer">
+
+        <a href="#">Google Play Store APP</a>
+        <a href="#">App Store APP</a>
+        <a href="#">About MyPatientHUB</a>
+        <a href="#">About Us</a>
+        <a href="#">Our Blog</a>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
