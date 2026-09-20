@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Doctor Results - MyPatientHUB</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="find-pages.css">
+
+</head>
+
+
+<body class="dashboard-body">
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo-area">
+            <div class="logo-icon">M</div>
+            <span>MyPatientHUB</span>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html" class="menu-item">
+                <span class="menu-icon">▣</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▤</span>
+                <span>Appointments</span>
+            </a>
+
+            <a href="find-doctor.html" class="menu-item active">
+                <span class="menu-icon">♟</span>
+                <span>Find Doctor</span>
+            </a>
+
+            <a href="find-clinic.html" class="menu-item">
+                <span class="menu-icon">▦</span>
+                <span>Find Clinic</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▣</span>
+                <span>Chat</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▤</span>
+                <span>Find Market-Place</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▦</span>
+                <span>Find Pharmacy</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▤</span>
+                <span>My Dependents</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">⚒</span>
+                <span>My Account</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="help-box">
+            <span>?</span>
+        </div>
+
+    </aside>
+    <main class="main-content">
+
+        <section class="dashboard-content">
+            <section class="doctor-hero">
+
+                <!-- TOP BAR -->
+                <div class="hero-topbar">
+
+                    <div class="hero-left">
+
+                        <button
+                            type="button"
+                            class="hero-hamburger"
+                            onclick="toggleDoctorSidebar()">
+                            ☰
+                        </button>
+
+                        <div class="hero-breadcrumb">
+
+                            <div>
+                                ⌂
+                                <span>/</span>
+                                Finddoctor
+                                <span>/</span>
+                                Results
+                            </div>
+
+                            <strong>Find Doctors</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-right">
+
+                        <div class="hero-search">
+
+                            <span>⌕</span>
+
+                            <input
+                                type="text"
+                                placeholder="Type here...">
+
+                        </div>
+
+                        <a
+                            href="index.html"
+                            class="hero-logout">
+                            ◉ Log out
+                        </a>
+
+                        <span class="hero-icon">⚙</span>
+
+                        <span class="hero-icon">♟</span>
+
+                    </div>
+
+                </div>
+
+
+              
+                <div class="hero-title">
+
+                    <h1>Find Doctors</h1>
+
+                    <p>
+                        Search doctors and schedule an appointment
+                    </p>
+
+                    <div class="search-row">
+
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="doctorResultSearch"
+                            placeholder="Doctor name or specialty">
+
+
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="doctorZipCode"
+                            placeholder="ZIP Code or Neighborhood">
+
+
+                        <button
+                            type="button"
+                            class="search-button"
+                            onclick="searchDoctors()">
+                            SEARCH
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <section class="doctor-results-page">
+                <div class="doctor-results-header">
+
+                    <h1>Find Doctors</h1>
+
+                    <p>
+                        Search doctors and schedule an appointment
+                    </p>
+
+                </div>
+                <div class="doctor-results-search">
+
+                    <div class="results-search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="text"
+                            id="doctorResultSearchBottom"
+                            placeholder="Doctor name or specialty">
+
+                    </div>
+
+
+                    <div class="results-search-box">
+
+                        <span>📍</span>
+
+                        <input
+                            type="text"
+                            id="doctorZipCodeBottom"
+                            placeholder="ZIP Code or Neighborhood">
+
+                    </div>
+
+
+                    <button
+                        class="results-search-btn"
+                        onclick="searchDoctors()">
+                        SEARCH
+                    </button>
+
+                </div>
+                <div class="doctor-map-layout">
+
+
+             
+                    <aside class="doctor-filter-panel">
+
+                        <div class="filter-header">
+
+                            <h2>Filters</h2>
+
+                            <button
+                                type="button"
+                                onclick="clearDoctorFilters()">
+                                Clear
+                            </button>
+
+                        </div>
+
+
+    
+                        <div class="filter-section">
+
+                            <h3>Specialty</h3>
+
+                            <select id="doctorSpecialty">
+
+                                <option value="">
+                                    All Specialties
+                                </option>
+
+                                <option>
+                                    Cardiology
+                                </option>
+
+                                <option>
+                                    Dermatology
+                                </option>
+
+                                <option>
+                                    Neurology
+                                </option>
+
+                                <option>
+                                    Pediatrics
+                                </option>
+
+                                <option>
+                                    General Medicine
+                                </option>
+
+                            </select>
+
+                        </div>
+                        <div class="filter-section">
+
+                            <h3>Filter By</h3>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Specialty</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Gender</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Condition</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Languages</span>
+                            </label>
+
+                        </div>
+                        <div class="filter-section">
+
+                            <h3>All Ages</h3>
+
+                            <label class="checkbox-row">
+                                <input
+                                    type="checkbox"
+                                    name="doctorAge">
+                                <span>All Ages</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input
+                                    type="checkbox"
+                                    name="doctorAge">
+                                <span>Children</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input
+                                    type="checkbox"
+                                    name="doctorAge">
+                                <span>Adults</span>
+                            </label>
+
+                        </div>
+                        <div class="filter-section">
+
+                            <h3>View Only</h3>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Online Scheduling</span>
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input type="checkbox">
+                                <span>Primary Care</span>
+                            </label>
+
+                        </div>
+
+
+                        <button
+                            class="apply-filter-btn"
+                            onclick="applyDoctorFilters()">
+                            APPLY FILTER
+                        </button>
+
+                    </aside>
+                    <section class="doctor-map-container">
+
+                        <div class="map-topbar">
+
+                            <div>
+
+                                <strong>
+                                    Doctors Near You
+                                </strong>
+
+                                <span id="doctorCount">
+                                    6 doctors found
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="map-location-btn"
+                                onclick="showCurrentLocation()">
+                                📍 My Location
+                            </button>
+
+                        </div>
+                        <div class="fake-map">
+
+                            <div class="fake-road road-a"></div>
+                            <div class="fake-road road-b"></div>
+                            <div class="fake-road road-c"></div>
+                            <div class="fake-road road-d"></div>
+
+
+                            <div class="map-area-label label-a">
+                                Central District
+                            </div>
+
+                            <div class="map-area-label label-b">
+                                Medical Center
+                            </div>
+
+                            <div class="map-area-label label-c">
+                                Riverside
+                            </div>
+
+                            <button
+                                class="doctor-marker marker-a"
+                                onclick="selectDoctor(1)">
+                                👨‍⚕️
+                            </button>
+
+                            <button
+                                class="doctor-marker marker-b"
+                                onclick="selectDoctor(2)">
+                                👩‍⚕️
+                            </button>
+
+                            <button
+                                class="doctor-marker marker-c"
+                                onclick="selectDoctor(3)">
+                                👨‍⚕️
+                            </button>
+
+                            <button
+                                class="doctor-marker marker-d"
+                                onclick="selectDoctor(4)">
+                                👩‍⚕️
+                            </button>
+
+                            <button
+                                class="doctor-marker marker-e"
+                                onclick="selectDoctor(5)">
+                                👨‍⚕️
+                            </button>
+
+
+                            <!-- CURRENT LOCATION -->
+
+                            <div
+                                class="fake-current-location"
+                                id="currentLocation">
+                            </div>
+
+
+                            <!-- MAP CONTROLS -->
+
+                            <div class="fake-map-controls">
+
+                                <button onclick="zoomIn()">
+                                    +
+                                </button>
+
+                                <button onclick="zoomOut()">
+                                    −
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+
+                <!-- ================= DOCTORS ================= -->
+                <section class="doctor-list-section">
+
+                    <h2>Available Doctors</h2>
+
+                    <div
+                        class="doctor-list"
+                        id="doctorList">
+                    </div>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- ================= FOOTER ================= -->
+            <footer class="dashboard-footer">
+
+                <p>
+                    ©️ 2026, made with ♥️ by MyPatientHUB
+                    for a better web.
+                </p>
+
+                <div>
+
+                    <a href="#">MyPatientHUB</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+
+                </div>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+
+    <script>
+
+        function toggleDoctorSidebar() {
+
+            const sidebar =
+                document.getElementById("sidebar");
+
+            if (!sidebar) {
+                return;
+            }
+
+            sidebar.classList.toggle("show");
+
+        }
+
+        const doctors = [
+
+            {
+                id: 1,
+                name: "Dr. Allan",
+                specialty: "Cardiology",
+                gender: "Male",
+                location: "Central District"
+            },
+
+            {
+                id: 2,
+                name: "Dr. Sarah Lee",
+                specialty: "Dermatology",
+                gender: "Female",
+                location: "Medical Center"
+            },
+
+            {
+                id: 3,
+                name: "Dr. Michael Khan",
+                specialty: "Neurology",
+                gender: "Male",
+                location: "Riverside"
+            },
+
+            {
+                id: 4,
+                name: "Dr. Emily Wilson",
+                specialty: "Pediatrics",
+                gender: "Female",
+                location: "Central District"
+            },
+
+            {
+                id: 5,
+                name: "Dr. Daniel Smith",
+                specialty: "General Medicine",
+                gender: "Male",
+                location: "North Avenue"
+            }
+
+        ];
+
+        function displayDoctors(list) {
+
+            const doctorList =
+                document.getElementById("doctorList");
+
+            doctorList.innerHTML = "";
+
+
+            list.forEach(function (doctor) {
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "doctor-result-card";
+
+
+                card.innerHTML = `
+
+                    <div class="doctor-result-avatar">
+                        DR
+                    </div>
+
+                    <div class="doctor-result-info">
+
+                        <h3>
+                            ${doctor.name}
+                        </h3>
+
+                        <p>
+                            ${doctor.specialty}
+                        </p>
+
+                        <span>
+                            📍 ${doctor.location}
+                        </span>
+
+                    </div>
+
+                    <button
+                        onclick="selectDoctor(
+                            ${doctor.id}
+                        )">
+
+                        VIEW ON MAP
+
+                    </button>
+
+                `;
+
+
+                doctorList.appendChild(card);
+
+            });
+
+
+            document.getElementById(
+                "doctorCount"
+            ).textContent =
+                list.length + " doctors found";
+
+        }
+
+        function selectDoctor(id) {
+
+            const marker =
+                document.querySelector(
+                    `[onclick="selectDoctor(${id})"]`
+                );
+
+
+            if (marker) {
+
+                marker.classList.add(
+                    "selected-marker"
+                );
+
+
+                setTimeout(function () {
+
+                    marker.classList.remove(
+                        "selected-marker"
+                    );
+
+                }, 1200);
+
+            }
+
+        }
+
+        function showCurrentLocation() {
+
+            const location =
+                document.getElementById(
+                    "currentLocation"
+                );
+
+
+            location.classList.add(
+                "location-active"
+            );
+
+        }
+
+        function searchDoctors() {
+
+            let searchInput =
+                document.getElementById(
+                    "doctorResultSearch"
+                );
+
+    
+            if (!searchInput) {
+
+                searchInput =
+                    document.getElementById(
+                        "doctorResultSearchBottom"
+                    );
+
+            }
+
+
+            const search =
+                searchInput
+                    ? searchInput.value
+                        .toLowerCase()
+                        .trim()
+                    : "";
+
+
+            if (search === "") {
+
+                displayDoctors(doctors);
+
+                return;
+
+            }
+
+
+            const results =
+                doctors.filter(function (doctor) {
+
+                    return (
+
+                        doctor.name
+                            .toLowerCase()
+                            .includes(search)
+
+                        ||
+
+                        doctor.specialty
+                            .toLowerCase()
+                            .includes(search)
+
+                    );
+
+                });
+
+
+            displayDoctors(results);
+
+        }
+        function applyDoctorFilters() {
+
+            const specialty =
+                document
+                    .getElementById(
+                        "doctorSpecialty"
+                    )
+                    .value;
+
+
+            let results = doctors;
+
+
+            if (specialty !== "") {
+
+                results =
+                    results.filter(function (doctor) {
+
+                        return doctor.specialty ===
+                            specialty;
+
+                    });
+
+            }
+
+
+            displayDoctors(results);
+
+        }
+        function clearDoctorFilters() {
+
+            document
+                .querySelectorAll(
+                    ".doctor-filter-panel input"
+                )
+                .forEach(function (input) {
+
+                    input.checked = false;
+
+                });
+
+
+            document
+                .getElementById(
+                    "doctorSpecialty"
+                )
+                .value = "";
+
+
+            displayDoctors(doctors);
+
+        }
+        let mapScale = 1;
+
+
+        function zoomIn() {
+
+            mapScale += .1;
+
+            document.querySelector(
+                ".fake-map"
+            ).style.backgroundSize =
+                (180 * mapScale) +
+                "px " +
+                (180 * mapScale) +
+                "px";
+
+        }
+
+
+        function zoomOut() {
+
+            mapScale -= .1;
+
+            if (mapScale < .7) {
+                mapScale = .7;
+            }
+
+            document.querySelector(
+                ".fake-map"
+            ).style.backgroundSize =
+                (180 * mapScale) +
+                "px " +
+                (180 * mapScale) +
+                "px";
+
+        }
+
+
+
+        displayDoctors(doctors);
+
+    </script>
+
+</body>
+
+</html>
